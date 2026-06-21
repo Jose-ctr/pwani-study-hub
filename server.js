@@ -24,7 +24,16 @@ app.get('/courses', (req, res) => {
     ]
   })
 })
-
+// GET endpoint - orodha ya wanafunzi
+app.get('/students', (req, res) => {
+  res.json({
+    status: "success",
+    students: [
+      { id: 1, name: "Joseph Mbui", course: "CDAC" },
+      { id: 2, name: "Neville Mwambui", course: "KCSE Math" }
+    ]
+  })
+})
 // POST endpoint - kuongeza student mpya
 app.post('/students', (req, res) => {
   const student = req.body
