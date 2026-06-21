@@ -3,7 +3,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-
+// Database yetu ya wanafunzi
+let students = [
+  { id: 1, name: "Joseph Mbui", course: "CDAC" },
+  { id: 2, name: "Neville Mwambui", course: "KCSE Math" }
+];
 // Health check endpoint - hii ndio ya kwanza tujaribu
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'Think Plus Outlook API is alive!' })
@@ -23,24 +27,24 @@ app.get('/courses', (req, res) => {
       { id: 3, name: "CDAC", level: "College" }
     ]
   })
-})
-// GET endpoint - orodha ya wanafunzi
-app.get('/students', (req, res) => {
+  app.get('/students', (req, res) => {
   res.json({
     status: "success",
-    students: [
-      { id: 1, name: "Joseph Mbui", course: "CDAC" },
-      { id: 2, name: "Neville Mwambui", course: "KCSE Math" }
-    ]
+    students: students  // Tumia array badala ya kuandika tena
   })
+})
 })
 // POST endpoint - kuongeza student mpya
 app.post('/students', (req, res) => {
-  const student = req.body
-  res.status(201).json({ 
+  const student = req.body;
+  student.id = students.length + 1;
+  students.push(student);
+  
+  res.status(201).json({
     message: "Student added successfully!",
-    student: student 
+    student: student
   })
+})
 })
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
