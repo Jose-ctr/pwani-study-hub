@@ -17,24 +17,22 @@ app.get('/health', (req, res) => {
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to Think Plus Outlook API - Built for students worldwide' })
 });
+})
+// GET endpoint - kuonyesha wanafunzi wote
+app.get('/students', (req, res) => {
+  res.json([
+    {id: 1, name: "Joseph Mbui", course: "Computer Science"},
+    {id: 2, name: "Neville Mwaumbui", course: "IT"}
+  ]);
+});
+
+// GET endpoint - kuonyesha courses
 app.get('/courses', (req, res) => {
-  res.json({
-    status: "success",
-    message: "Think Plus Outlook Courses",
-    courses: [
-      { id: 1, name: "KCSE Math", level: "High School" },
-      { id: 2, name: "CBC Grade 7", level: "Junior" },
-      { id: 3, name: "CDAC", level: "College" }
-    ]
-  })
-  app.get('/students', (req, res) => {
-  res.json({
-    status: "success",
-    students: students  // Tumia array badala ya kuandika tena
-  })
-})
-})
-// POST endpoint - kuongeza student mpya
+  res.json([
+    {id: 1, name: "Math 101"},
+    {id: 2, name: "Programming 101"}
+  ]);
+});// POST endpoint - kuongeza student mpya
 app.post('/students', (req, res) => {
   const student = req.body;
   student.id = students.length + 1;
