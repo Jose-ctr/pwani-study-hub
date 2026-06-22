@@ -42,7 +42,7 @@ app.post('/students', (req, res) => {
     message: "Student added successfully!",
     student: student
   })
-})
+)
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
