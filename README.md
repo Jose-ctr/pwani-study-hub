@@ -1,2 +1,11 @@
- # think-plus-outlook-study-hub
-Think Plus Outlook API 📚🌍Flask Student DB. Built for students worldwide. KNEC, CBC, CDAC, WAEC support + M-Pesa, Stripe payments. API-first edtech backend.
+
+# think-plus-outlook-study-hub 📚
+
+**API-first EdTech Backend** built with Flask + Student DB.
+
+**Features:** 
+- **Curriculum**: CBC/KNEC, CDAC, WAEC support
+- **Payments**: M-Pesa & Stripe integration 
+- **Docs**: OpenAPI spec in `api.yaml`
+
+Built for students worldwide 🌍
